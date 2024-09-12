@@ -8,6 +8,9 @@
 
 import { PluginListenerHandle } from "@capacitor/core";
 
+/**
+ * Scanned NFC contents
+ */
 export interface NFCScannedEvent {
    data: string,
    tagInfo: {
@@ -15,18 +18,23 @@ export interface NFCScannedEvent {
       type: string
    }
 }
+
+/**
+ * Scan error
+ */
 export interface ScanErrorEvent extends Error {}
+
 
 export interface NFCUtilsPlugin {
 	/**
-   * Add a listener to a NFC reading event
+   * Listen for a scanned NFC event
    * @param event
    * @param callback
    */
    addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 	
    /**
-   * Add a listener to a NFC reading event
+   * Listen for a scan error event
    * @param event
    * @param callback
    */

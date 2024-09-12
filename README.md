@@ -1,12 +1,26 @@
-# nfcutils
+# NFCUtils - plugin for Capacitor
 
-Capacitor plugin for NFC functionalities
+Capacitor plugin providing NFC functionalities
+
+### Current Support
+
+- ✅ Android
+- ❌ iOS _(not yet implemented)_
+- 🚫 Web/PWA _(not supported, see: [Web NFC API](https://developer.mozilla.org/en-US/docs/Web/API/Web_NFC_API) )_
 
 ## Install
 
 ```bash
 npm install nfcutils
 npx cap sync
+```
+
+## Permissions
+
+### Android
+>**AndroidManifest.xml**
+```xml
+<uses-permission android:name="android.permission.NFC" />
 ```
 
 ## API
@@ -28,17 +42,17 @@ npx cap sync
 ### addListener('nfcScanned', ...)
 
 ```typescript
-addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-Add a listener to a NFC reading event
+Listen for a scanned NFC event
 
 | Param              | Type                                                                            |
 | ------------------ | ------------------------------------------------------------------------------- |
 | **`eventName`**    | <code>'nfcScanned'</code>                                                       |
 | **`listenerFunc`** | <code>(event: <a href="#nfcscannedevent">NFCScannedEvent</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
@@ -46,17 +60,17 @@ Add a listener to a NFC reading event
 ### addListener('scanError', ...)
 
 ```typescript
-addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-Add a listener to a NFC reading event
+Listen for a scan error event
 
 | Param              | Type                                                                          |
 | ------------------ | ----------------------------------------------------------------------------- |
 | **`eventName`**    | <code>'scanError'</code>                                                      |
 | **`listenerFunc`** | <code>(event: <a href="#scanerrorevent">ScanErrorEvent</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
@@ -106,6 +120,8 @@ Removes all listeners.
 
 #### NFCScannedEvent
 
+Scanned NFC contents
+
 | Prop          | Type                                       |
 | ------------- | ------------------------------------------ |
 | **`data`**    | <code>string</code>                        |
@@ -113,5 +129,7 @@ Removes all listeners.
 
 
 #### ScanErrorEvent
+
+Scan error
 
 </docgen-api>

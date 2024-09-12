@@ -1,7 +1,7 @@
 {
   "name": "nfcutils",
   "version": "0.1",
-  "description": "Capacitor plugin for NFC functionalities",
+  "description": "Capacitor plugin providing NFC functionalities",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

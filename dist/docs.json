@@ -1,0 +1,159 @@
+{
+  "api": {
+    "name": "NFCUtilsPlugin",
+    "slug": "nfcutilsplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'nfcScanned'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: NFCScannedEvent) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [
+          {
+            "name": "param",
+            "text": "event"
+          },
+          {
+            "name": "param",
+            "text": "callback"
+          }
+        ],
+        "docs": "Listen for a scanned NFC event",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "NFCScannedEvent"
+        ],
+        "slug": "addlistenernfcscanned-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'scanError'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: ScanErrorEvent) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [
+          {
+            "name": "param",
+            "text": "event"
+          },
+          {
+            "name": "param",
+            "text": "callback"
+          }
+        ],
+        "docs": "Listen for a scan error event",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ScanErrorEvent"
+        ],
+        "slug": "addlistenerscanerror-"
+      },
+      {
+        "name": "startReading",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Start listening for NFC read",
+        "complexTypes": [],
+        "slug": "startreading"
+      },
+      {
+        "name": "stopReading",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Stop listening for NFC read",
+        "complexTypes": [],
+        "slug": "stopreading"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Removes all listeners.",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "NFCScannedEvent",
+      "slug": "nfcscannedevent",
+      "docs": "Scanned NFC contents",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "tagInfo",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "{ id: string; type: string; }"
+        }
+      ]
+    },
+    {
+      "name": "ScanErrorEvent",
+      "slug": "scanerrorevent",
+      "docs": "Scan error",
+      "tags": [],
+      "methods": [],
+      "properties": []
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
