@@ -19,10 +19,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andre5s/NFCUtils.git.git"
+    "url": "git+https://github.com/andre5s/NFCUtils.git"
   },
   "bugs": {
-    "url": "https://github.com/andre5s/NFCUtils.git/issues"
+    "url": "https://github.com/andre5s/NFCUtils/issues"
   },
   "keywords": [
     "capacitor",
