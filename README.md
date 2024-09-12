@@ -2,11 +2,16 @@
 
 Capacitor plugin providing NFC functionalities
 
-### Current Support
+### Supported Platforms
 
 - ✅ Android
 - ❌ iOS _(not yet implemented)_
 - 🚫 Web/PWA _(not supported, see: [Web NFC API](https://developer.mozilla.org/en-US/docs/Web/API/Web_NFC_API) )_
+
+### NFC Tag Technologies
+
+- NDEF
+- MifareUltralight
 
 ## Install
 
