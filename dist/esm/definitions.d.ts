@@ -24,14 +24,14 @@ export interface ScanErrorEvent extends Error {
 export interface NFCUtilsPlugin {
     /**
    * Listen for a scanned NFC event
-   * @param event
-   * @param callback
+   * @param eventName
+   * @param listenerFunc
    */
     addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
     /**
     * Listen for a scan error event
-    * @param event
-    * @param callback
+    * @param eventName
+    * @param listenerFunc
     */
     addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
     /**

@@ -24,11 +24,11 @@
         "tags": [
           {
             "name": "param",
-            "text": "event"
+            "text": "eventName"
           },
           {
             "name": "param",
-            "text": "callback"
+            "text": "listenerFunc"
           }
         ],
         "docs": "Listen for a scanned NFC event",
@@ -57,11 +57,11 @@
         "tags": [
           {
             "name": "param",
-            "text": "event"
+            "text": "eventName"
           },
           {
             "name": "param",
-            "text": "callback"
+            "text": "listenerFunc"
           }
         ],
         "docs": "Listen for a scan error event",
