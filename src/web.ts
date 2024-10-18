@@ -22,4 +22,8 @@ export class NFCUtilsWeb extends WebPlugin implements NFCUtilsPlugin {
   stopReading(): Promise<void> {
     throw new Error('Method not implemented.');
   }
+
+  isSupported(): Promise<{supported: boolean}> {
+    return Promise.resolve({supported: false});
+  }
 }

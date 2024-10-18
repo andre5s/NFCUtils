@@ -30,6 +30,9 @@ var capacitorNFCUtils = (function (exports, core) {
         stopReading() {
             throw new Error('Method not implemented.');
         }
+        isSupported() {
+            return Promise.resolve({ supported: false });
+        }
     }
 
     var web = /*#__PURE__*/Object.freeze({

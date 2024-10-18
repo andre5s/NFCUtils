@@ -36,6 +36,7 @@ npx cap sync
 * [`addListener('scanError', ...)`](#addlistenerscanerror-)
 * [`startReading()`](#startreading)
 * [`stopReading()`](#stopreading)
+* [`isSupported()`](#issupported)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
@@ -98,6 +99,19 @@ stopReading() => Promise<void>
 ```
 
 Stop listening for NFC read
+
+--------------------
+
+
+### isSupported()
+
+```typescript
+isSupported() => Promise<{ supported: boolean; }>
+```
+
+Check if NFC is supported
+
+**Returns:** <code>Promise&lt;{ supported: boolean; }&gt;</code>
 
 --------------------
 

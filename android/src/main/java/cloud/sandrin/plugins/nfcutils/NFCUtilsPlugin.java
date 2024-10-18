@@ -21,8 +21,8 @@ import com.getcapacitor.annotation.CapacitorPlugin;
  * NFC plugin for Capacitor
  * @license MIT
  *
- * @version 1.0
- * @date Sep 2024
+ * @version 1.1
+ * @date Oct 2024
  * @author Andrea Sandrin
  */
 @CapacitorPlugin(name = "NFCUtils")
@@ -34,12 +34,23 @@ public class NFCUtilsPlugin extends Plugin {
   private String[][] techListsArray;
   private NFCUtils nfcUtils;
   private boolean readingEnabled = false;
+  private boolean nfcSupported;
 
   @Override
   public void load(){
     activity = getActivity();
     nfcUtils = new NFCUtils();
     nfcAdapter = NfcAdapter.getDefaultAdapter(activity);
+    // Check if NFC is supported
+    if(nfcAdapter != null){
+      nfcSupported = true;
+    }
+    else{
+      nfcSupported = false;
+      Log.e("NFCUtilsPlugin", "NFC service not supported on this device - no adapter exists");
+      return;
+    }
+
     pendingIntent = PendingIntent.getActivity(
       activity,
       0,
@@ -84,16 +95,26 @@ public class NFCUtilsPlugin extends Plugin {
     call.resolve();
   }
 
+  /**
+   * Check if NFC is supported
+   * @param call
+   * @since 1.1
+   */
+  @PluginMethod()
+  public void isSupported(PluginCall call) {
+    call.resolve(new JSObject().put("supported", nfcSupported));
+  }
+
   @Override
   protected void handleOnPause() {
     super.handleOnPause();
-    nfcAdapter.disableForegroundDispatch(activity);
+    if(nfcSupported) nfcAdapter.disableForegroundDispatch(activity);
   }
 
   @Override
   protected void handleOnResume() {
     super.handleOnResume();
-    nfcAdapter.enableForegroundDispatch(activity, pendingIntent, intentFiltersArray, techListsArray);
+    if(nfcSupported) nfcAdapter.enableForegroundDispatch(activity, pendingIntent, intentFiltersArray, techListsArray);
   }
 
   /**
@@ -103,10 +124,10 @@ public class NFCUtilsPlugin extends Plugin {
   @Override
   protected void handleOnNewIntent(Intent intent) {
     super.handleOnNewIntent(intent);
-    if(readingEnabled){
+    if(nfcSupported && readingEnabled){
       // Check for intent action type
       // NDEF
-      if(NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+      if(NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())){
         Log.d("NFC-Debug", "ACTION_NDEF_DISCOVERED");
         // Get tag
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);

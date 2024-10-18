@@ -43,6 +43,12 @@ export interface NFCUtilsPlugin {
      */
     stopReading(): Promise<void>;
     /**
+     * Check if NFC is supported
+     */
+    isSupported(): Promise<{
+        supported: boolean;
+    }>;
+    /**
      * Removes all listeners.
      */
     removeAllListeners(): Promise<void>;

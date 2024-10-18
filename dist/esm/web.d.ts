@@ -11,4 +11,7 @@ export declare class NFCUtilsWeb extends WebPlugin implements NFCUtilsPlugin {
     constructor();
     startReading(): Promise<void>;
     stopReading(): Promise<void>;
+    isSupported(): Promise<{
+        supported: boolean;
+    }>;
 }

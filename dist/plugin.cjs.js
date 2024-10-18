@@ -33,6 +33,9 @@ class NFCUtilsWeb extends core.WebPlugin {
     stopReading() {
         throw new Error('Method not implemented.');
     }
+    isSupported() {
+        return Promise.resolve({ supported: false });
+    }
 }
 
 var web = /*#__PURE__*/Object.freeze({
