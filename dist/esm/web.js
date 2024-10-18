@@ -17,5 +17,8 @@ export class NFCUtilsWeb extends WebPlugin {
     stopReading() {
         throw new Error('Method not implemented.');
     }
+    isSupported() {
+        return Promise.resolve({ supported: false });
+    }
 }
 //# sourceMappingURL=web.js.map

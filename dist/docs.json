@@ -92,6 +92,16 @@
         "slug": "stopreading"
       },
       {
+        "name": "isSupported",
+        "signature": "() => Promise<{ supported: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ supported: boolean; }>",
+        "tags": [],
+        "docs": "Check if NFC is supported",
+        "complexTypes": [],
+        "slug": "issupported"
+      },
+      {
         "name": "removeAllListeners",
         "signature": "() => Promise<void>",
         "parameters": [],
