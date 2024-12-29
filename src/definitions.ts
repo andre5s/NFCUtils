@@ -31,14 +31,14 @@ export interface NFCUtilsPlugin {
    * @param eventName
    * @param listenerFunc
    */
-   addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+   addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void): Promise<PluginListenerHandle>;
 	
    /**
    * Listen for a scan error event
    * @param eventName
    * @param listenerFunc
    */
-   addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+   addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void): Promise<PluginListenerHandle>;
   
    /**
     * Start listening for NFC read
