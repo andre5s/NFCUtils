@@ -24,15 +24,6 @@ var capacitorNFCUtils = (function (exports, core) {
             super();
             throw new Error('Plugin not implemented for Web/PWA');
         }
-        startReading() {
-            throw new Error('Method not implemented.');
-        }
-        stopReading() {
-            throw new Error('Method not implemented.');
-        }
-        isSupported() {
-            return Promise.resolve({ supported: false });
-        }
     }
 
     var web = /*#__PURE__*/Object.freeze({
@@ -41,8 +32,6 @@ var capacitorNFCUtils = (function (exports, core) {
     });
 
     exports.NFCUtils = NFCUtils;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
 
     return exports;
 

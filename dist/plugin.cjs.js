@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var core = require('@capacitor/core');
 
 /**
@@ -26,15 +24,6 @@ class NFCUtilsWeb extends core.WebPlugin {
     constructor() {
         super();
         throw new Error('Plugin not implemented for Web/PWA');
-    }
-    startReading() {
-        throw new Error('Method not implemented.');
-    }
-    stopReading() {
-        throw new Error('Method not implemented.');
-    }
-    isSupported() {
-        return Promise.resolve({ supported: false });
     }
 }
 

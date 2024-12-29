@@ -11,14 +11,5 @@ export class NFCUtilsWeb extends WebPlugin {
         super();
         throw new Error('Plugin not implemented for Web/PWA');
     }
-    startReading() {
-        throw new Error('Method not implemented.');
-    }
-    stopReading() {
-        throw new Error('Method not implemented.');
-    }
-    isSupported() {
-        return Promise.resolve({ supported: false });
-    }
 }
 //# sourceMappingURL=web.js.map

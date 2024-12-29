@@ -7,23 +7,10 @@
  */
 
 import { WebPlugin } from '@capacitor/core';
-import type { NFCUtilsPlugin } from './definitions';
 
-export class NFCUtilsWeb extends WebPlugin implements NFCUtilsPlugin {
+export class NFCUtilsWeb extends WebPlugin {
   constructor(){
     super();
     throw new Error('Plugin not implemented for Web/PWA');
-  }
-
-  startReading(): Promise<void> {
-    throw new Error('Method not implemented.');
-  }
-
-  stopReading(): Promise<void> {
-    throw new Error('Method not implemented.');
-  }
-
-  isSupported(): Promise<{supported: boolean}> {
-    return Promise.resolve({supported: false});
   }
 }
