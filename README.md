@@ -48,7 +48,7 @@ npx cap sync
 ### addListener('nfcScanned', ...)
 
 ```typescript
-addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'nfcScanned', listenerFunc: (event: NFCScannedEvent) => void) => Promise<PluginListenerHandle>
 ```
 
 Listen for a scanned NFC event
@@ -58,7 +58,7 @@ Listen for a scanned NFC event
 | **`eventName`**    | <code>'nfcScanned'</code>                                                       |
 | **`listenerFunc`** | <code>(event: <a href="#nfcscannedevent">NFCScannedEvent</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 --------------------
 
@@ -66,7 +66,7 @@ Listen for a scanned NFC event
 ### addListener('scanError', ...)
 
 ```typescript
-addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'scanError', listenerFunc: (event: ScanErrorEvent) => void) => Promise<PluginListenerHandle>
 ```
 
 Listen for a scan error event
@@ -76,7 +76,7 @@ Listen for a scan error event
 | **`eventName`**    | <code>'scanError'</code>                                                      |
 | **`listenerFunc`** | <code>(event: <a href="#scanerrorevent">ScanErrorEvent</a>) =&gt; void</code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 --------------------
 
